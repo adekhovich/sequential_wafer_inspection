@@ -1,3 +1,3 @@
-# sequential_wafer_inspection
+# Sequential wafer map inspection via feedback loop with reinforcement learning
 
 In progres...

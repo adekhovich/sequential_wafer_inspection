@@ -60,14 +60,14 @@ Possible arguments:
     --confidnet_lr                  Learning rate for the confident (default: 1e-3)
     --confidnet_wd                  Weight decay for the confident (default: 1e-5)
     --confidnet_optimizer_name      Optimizer to train the confident (default: Adam)
-    --confidnet_batch_size          Optimizer to train the confident (default: 128)
+    --confidnet_batch_size          Batch size to train the confident (default: 128)
     --train_confidnet               Use this flag to train the confidnet
     
     # Patch selector related:
     --patch_selector_num_iters      Number of training epochs for the patch_selector (default: 100)
     --patch_selector_lr             Learning rate for the patch_selector (default: 1e-3)
     --patch_selector_wd             Weight decay for the patch_selector (default: 1e-5)
-    --patch_selector_batch_size     Optimizer to train the patch_selector (default: 16)  
+    --patch_selector_batch_size     Batch size to train the patch_selector (default: 16)  
     --gamma                         Discounting factor (default: 0.99)
     --train_patch_selector          Use this flag to train the patch_selector
     

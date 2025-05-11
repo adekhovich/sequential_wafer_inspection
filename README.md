@@ -53,15 +53,15 @@ Possible arguments:
     --supcon                        Use this flag to include the SupCon loss term. Only for ResNet
     
     # Confidnet related:   
-    parser.add_argument("--confidnet_name", default="gru", type=str, help="Name of the confidnet model")
-    parser.add_argument("--confidnet_hidden_dim", default=128, type=int, help="Size of the hidden state")
-    parser.add_argument("--confidnet_num_layers", default=2, type=int, help="Number of RNN cells")
-    parser.add_argument("--confidnet_num_epochs", default=300, type=int, help="Number of training epochs for the confidnet")
-    parser.add_argument("--confidnet_lr", default=1e-3, type=float, help="Learning rate for the confidnet")
-    parser.add_argument("--confidnet_wd", default=1e-5, type=float, help="Weight decay for the confidnet")
-    parser.add_argument("--confidnet_optimizer_name", default="Adam", type=str, help="Optimizer to train the confidnet")
-    parser.add_argument("--confidnet_batch_size", default=128, type=int, help="Optimizer to train the confidnet")
-    parser.add_argument("--train_confidnet", action="store_true", help="")
+    --confidnet_name                Name of the confidnet model (default: gru)
+    --confidnet_hidden_dim          Size of the hidden state(default: 128)
+    --confidnet_num_layers          Number of confident RNN cells (default: 2)
+    --confidnet_num_epochs          Number of training epochs for the confident (default: 300)
+    --confidnet_lr                  Learning rate for the confident (default: 1e-3)
+    --confidnet_wd                  Weight decay for the confident (default: 1e-5)
+    --confidnet_optimizer_name      Optimizer to train the confident (default: Adam)
+    --confidnet_batch_size          Optimizer to train the confident (default: 128)
+    --train_confidnet               Use this flag to train the confidnet
     
     # Patch selector related:
     parser.add_argument("--patch_selector_num_iters", default=100, type=int, help="Number of training epochs for the patch_selector")

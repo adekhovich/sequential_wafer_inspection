@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## Train the model
 
-Run the code with:
+Run the code with the following command to train the model from scratch:
 ```
 python3 src/main.py --train_classifier --train_confidnet --train_patch_selector
 

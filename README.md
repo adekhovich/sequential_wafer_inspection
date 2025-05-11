@@ -6,7 +6,7 @@ This repository contains the official implementation of Sequential wafer map ins
 
 ## Abstract
 
-Wafer map defect recognition is a vital part of the semiconductor manufacturing process that requires a high level of precision. Measurement tools in such manufacturing systems can scan only a small region (patch) of the map at a time. However, this can be resource-intensive and lead to unnecessary additional costs if the full wafer map is measured. Instead, selective sparse measurements of the image save a considerable amount of resources (e.g. scanning time). Therefore, in this work, we propose a feedback loop approach for wafer map defect recognition. The algorithm aims to find sequentially the most informative regions in the image based on previously acquired ones and make a prediction of a defect type by having only these partial observations without scanning the full wafer map. To achieve our goal, we introduce a reinforcement learning-based measurement acquisition process and recurrent neural network-based classifier that takes the sequence of these measurements as an input. Additionally, we employ an ensemble technique to increase the accuracy of the prediction. As a result, we reduce the need for scanned patches by 38% having higher accuracy than the conventional convolutional neural network-based approach on a publicly available WM-811k dataset.
+Wafer map defect recognition is a vital part of the semiconductor manufacturing process that requires a high level of precision. Measurement tools in such manufacturing systems can scan only a small region (patch) of the map at a time. However, this can be resource-intensive and lead to unnecessary additional costs if the full wafer map is measured. Instead, selective sparse measurements of the image save a considerable amount of resources (e.g. scanning time). Therefore, in this work, we propose a feedback loop approach for wafer map defect recognition. The algorithm aims to find sequentially the most informative regions in the image based on previously acquired ones and make a prediction of a defect type by having only these partial observations without scanning the full wafer map. To achieve our goal, we introduce a reinforcement learning-based measurement acquisition process and a recurrent neural network-based classifier that takes the sequence of these measurements as input. Additionally, we employ an ensemble technique to increase the accuracy of the prediction. As a result, we reduce the need for scanned patches by 38%, having higher accuracy than the conventional convolutional neural network-based approach on a publicly available WM-811k dataset.
 
 
 ## Dataset
@@ -33,24 +33,24 @@ Run the code with:
 python3 src/main.py --train_classifier --train_confidnet --train_patch_selector --seed 0
 
 Possible arguments:
-    --data_name                Name of the dataset (default: wm811k)
-    --data_path                Path to the dataset (default: ./data/WM811K_labeled.pkl)
-    --input_channels           Number of image channels (default: 1)
-    --patch_size               Patch size (default: 8)
-    --seed                     Random seed (default: 0)
+    --data_name                     Name of the dataset (default: wm811k)
+    --data_path                     Path to the dataset (default: ./data/WM811K_labeled.pkl)
+    --input_channels                Number of image channels (default: 1)
+    --patch_size                    Patch size (default: 8)
+    --seed                          Random seed (default: 0)
     
     # Classifier related:
-    parser.add_argument("--classifier_name", default="gru", type=str, help="Name of the classifiaction model")
-    parser.add_argument("--classifier_hidden_dim", default=256, type=int, help="Size of the hidden state")
-    parser.add_argument("--classifier_num_layers", default=2, type=int, help="Number of RNN cells")
-    parser.add_argument("--classifier_num_epochs", default=240, type=int, help="Number of training epochs for the classifier")
-    parser.add_argument("--classifier_lr", default=1e-3, type=float, help="Learning rate for the classifier")
-    parser.add_argument("--classifier_wd", default=1e-5, type=float, help="Weight decay for the classifier")
-    parser.add_argument("--classifier_optimizer_name", default="Adam", type=str, help="Optimizer to train the classifier")
-    parser.add_argument("--classifier_batch_size", default=128, type=int, help="Optimizer to train the classifier") 
-    parser.add_argument("--classifier_num_heads", default=8, type=int, help="Number of RNN heads for which the loss is computed") 
-    parser.add_argument("--train_classifier", action="store_true", help="")
-    parser.add_argument("--supcon", action="store_true", help="Include SupCon loss. Only for ResNet")
+    --classifier_name               Name of the classification model (default: gru)
+    --classifier_hidden_dim         Size of the hidden state (default: 256)
+    --classifier_num_layers         Number of RNN cells (default: 2)
+    --classifier_num_epochs         Number of training epochs for the classifier (default: 240)
+    --classifier_lr                 Learning rate for the classifier (default: 1e-3)
+    --classifier_wd                 Weight decay for the classifier (default: 1e-5)
+    --classifier_optimizer_name     Optimizer to train the classifier (default: Adam)
+    --classifier_batch_size         Batch size to train the classifier (default: 128) 
+    --classifier_num_heads          Number of RNN heads for which the loss is computed (default: 8) 
+    --train_classifier              Use this flag to train the classifier
+    --supcon                        Use this flag to include the SupCon loss term. Only for ResNet
     
     # Confidnet related:   
     parser.add_argument("--confidnet_name", default="gru", type=str, help="Name of the confidnet model")

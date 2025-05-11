@@ -13,6 +13,19 @@ Wafer map defect recognition is a vital part of the semiconductor manufacturing 
 
 The dataset for this research is provided by [Wu et al.](10.1109/TSM.2014.2364237) and can be downloaded [here](http://mirlab.org/dataSet/public/). 
 
+## Installation
+
+* Clone this github repository using:
+```
+git clone https://github.com/adekhovich/sequential_wafer_inspection.git
+cd sequential_wafer_inspection
+```
+
+* Install requirements using:
+```
+pip install -r requirements.txt
+```
+
 
 ## Citation
 

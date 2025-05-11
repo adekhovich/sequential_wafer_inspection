@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 Run the code with:
 ```
-python3 src/main.py --train_classifier --train_confidnet --train_patch_selector --seed 0
+python3 src/main.py --train_classifier --train_confidnet --train_patch_selector
 
 Possible arguments:
     --data_name                     Name of the dataset (default: wm811k)
@@ -64,12 +64,12 @@ Possible arguments:
     --train_confidnet               Use this flag to train the confidnet
     
     # Patch selector related:
-    parser.add_argument("--patch_selector_num_iters", default=100, type=int, help="Number of training epochs for the patch_selector")
-    parser.add_argument("--patch_selector_lr", default=1e-3, type=float, help="Learning rate for the patch_selector")
-    parser.add_argument("--patch_selector_wd", default=1e-5, type=float, help="Weight decay for the patch_selector")
-    parser.add_argument("--patch_selector_batch_size", default=16, type=int, help="Optimizer to train the patch_selector")  
-    parser.add_argument("--gamma", default=0.99, type=int, help="Discounting factor")  
-    parser.add_argument("--train_patch_selector", action="store_true", help="")
+    --patch_selector_num_iters      Number of training epochs for the patch_selector (default: 100)
+    --patch_selector_lr             Learning rate for the patch_selector (default: 1e-3)
+    --patch_selector_wd             Weight decay for the patch_selector (default: 1e-5)
+    --patch_selector_batch_size     Optimizer to train the patch_selector (default: 16)  
+    --gamma                         Discounting factor (default: 0.99)
+    --train_patch_selector          Use this flag to train the patch_selector
     
     # Hybrid & ensemble related. ONLY FOR EVALUATION:
     --hybrid              Use this flag for the Hybrid approach (with CNN)

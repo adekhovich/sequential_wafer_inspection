@@ -2,7 +2,7 @@
 
 This repository contains the official implementation of Sequential wafer map inspection via feedback loop with reinforcement learning [paper](https://www.sciencedirect.com/science/article/pii/S0957417425006189) by Aleksandr Dekhovich, Oleg Soloviev & Michel Verhaegen.
 
-![Sequential wafer map inspection](https://github.com/adekhovich/sequential_wafer_inspection/blob/main/docs/Figure1.svg)
+![Sequential wafer map inspection](https://github.com/adekhovich/sequential_wafer_inspection/blob/main/docs/Figure1.svg) 
 
 ## Abstract
 

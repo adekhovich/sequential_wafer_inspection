@@ -91,6 +91,16 @@ Possible arguments:
   python3 src/main.py --train_classifier --classifier_name resnet34 --supcon
 ```
 
+* To evaluate the model with Hybrid approach with ResNet-34 (without SupCon loss term) use:
+```
+  python3 src/main.py --hybrid
+```
+
+* To evaluate the Ensemble with 5 models (indicate the paths to them in the main.py) use:
+```
+  python3 src/main.py --ensemble --num_models 5
+```
+
 ## Citation
 
 If you use our code in your research, please cite our work:

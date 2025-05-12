@@ -11,7 +11,7 @@ Wafer map defect recognition is a vital part of the semiconductor manufacturing 
 
 ## Dataset
 
-The dataset for this research is provided by [Wu et al.](10.1109/TSM.2014.2364237) and can be downloaded [here](http://mirlab.org/dataSet/public/). 
+The dataset for this research is provided by [Wu et al.](https://ieeexplore.ieee.org/document/6932449) and can be downloaded [here](http://mirlab.org/dataSet/public/). 
 
 We selected only the labeled images and stored them in a separate [dataset](https://github.com/adekhovich/sequential_wafer_inspection/tree/main/data).
 

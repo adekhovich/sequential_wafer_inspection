@@ -1,4 +1,5 @@
 import os
+import zipfile
 
 from PIL import Image
 import cv2
@@ -32,7 +33,7 @@ TYPE_TO_CLASS = {
 }
 
 class WM811K(Dataset):
-    def __init__(self, path='../MixedDefect/data/WM811K_labeled.pkl', train=True, val=False, transforms=transforms, input_channels=1, num_classes=8, 
+    def __init__(self, path="./data/WM811K_labeled.pkl", train=True, val=False, transforms=transforms, input_channels=1, num_classes=8, 
                  max_per_class=-1, list_classes=[0, 1, 2, 3, 4, 5, 6, 7], idx=None, apply_filter=False, loader=default_loader):
         super().__init__()
         self.path = os.path.expanduser(path)
@@ -53,6 +54,10 @@ class WM811K(Dataset):
             
     
     def create_df(self, idx=None):
+        
+        if not os.path.isfile(self.path):
+            with zipfile.ZipFile("./data/WM811K_labeled.zip", 'r') as zip_ref:
+                zip_ref.extractall("./data")
         
         df = pd.read_pickle(self.path)
         dfs = [] 

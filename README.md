@@ -79,6 +79,18 @@ Possible arguments:
     --num_models          Number of models in the ensemble (default: 5)    
 ```
 
+## Examples
+
+* To train the model using already pretrained classifier use the following command (indicate the path to the classifier's parameters in the main.py):
+```
+  python3 src/main.py --train_confidnet --train_patch_selector
+```
+
+* To train ResNet-34 with supervised contrasive loss term use:
+```
+  python3 src/main.py --train_classifier --classifier_name resnet34 --supcon
+```
+
 ## Citation
 
 If you use our code in your research, please cite our work:

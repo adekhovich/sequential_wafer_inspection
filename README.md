@@ -83,17 +83,17 @@ Possible arguments:
 
 ## Examples
 
-* To train the model using already pretrained classifier use the following command (indicate the path to the classifier's parameters in the main.py):
+* To train the model using already pretrained classifier, use the following command (indicate the path to the classifier parameters in the main.py):
 ```
   python3 src/main.py --train_confidnet --train_patch_selector
 ```
 
-* To train ResNet-34 with supervised contrasive loss term use:
+* To train ResNet-34 with the supervised contrastive loss term, use:
 ```
   python3 src/main.py --train_classifier --classifier_name resnet34 --supcon
 ```
 
-* To evaluate the model with Hybrid approach with ResNet-34 (without SupCon loss term) use:
+* To evaluate the model with Hybrid approach with ResNet-34 (without SupCon loss term), use:
 ```
   python3 src/main.py --hybrid
 ```
